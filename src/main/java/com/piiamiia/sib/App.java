@@ -17,5 +17,8 @@ public class App extends Application<Config> {
         env.jersey().register(billingService);
         final DetailsService detailsService = new DetailsService();
         env.jersey().register(detailsService);
+
+        env.healthChecks().register("template",
+                new RestHealthCheck(config.getVersion()));
     }
 }
