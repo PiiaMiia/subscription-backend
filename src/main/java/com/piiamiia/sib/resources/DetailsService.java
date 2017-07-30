@@ -4,9 +4,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.piiamiia.sib.data.Details;
 import com.piiamiia.sib.database.DetailsDB;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/details")
@@ -20,5 +18,14 @@ public class DetailsService {
     @Produces(MediaType.APPLICATION_JSON)
     public Details getDetails() {
         return DetailsDB.getDetails();
+    }
+
+    @DELETE
+    @Timed
+    @Produces(MediaType.APPLICATION_JSON)
+    public Details cancelSubscription() {
+        Details empty = new Details("","Free","GO Service");
+        DetailsDB.setDetails(empty);
+        return getDetails();
     }
 }

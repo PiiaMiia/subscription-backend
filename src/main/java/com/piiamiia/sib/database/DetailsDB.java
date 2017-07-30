@@ -8,4 +8,8 @@ public class DetailsDB {
     public static Details getDetails() {
         return details;
     }
+
+    public static void setDetails(Details details) {
+        DetailsDB.details = details;
+    }
 }
