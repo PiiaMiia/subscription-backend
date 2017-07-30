@@ -18,6 +18,6 @@ public class RestHealthCheck extends HealthCheck {
                     this.version);
         }
         return Result.healthy("OK with version: " + this.version +
-                ". Persons count: " + BillingDB.getCount());
+                ". Bills count: " + BillingDB.getCount());
     }
 }
