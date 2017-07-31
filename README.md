@@ -1,5 +1,7 @@
 # Introduction
 
+Backend server is deployed to DigitalOcean instance: at http://188.166.58.182/api
+
 Dropwizard applications are developed using maven, so first make sure you have that set up.
 Instructions can be found here: https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html.
 I used IntelliJ for developing and building this project, so I recommend using this for packaging the project.
@@ -32,7 +34,7 @@ Available services:
 
 SERVICE | URL | GET | DELETE | POST
 --- | --- | --- | --- | ---
-**DetailsService** | http://localhost:9000/details | X | X | X
+**DetailsService** | /details | X | X | X
 |  |   | *Gets all details of current service* | *Ends current subscription* | *reinstates ended subscription*
-**BillingService** | http://localhost:9000/bills | X | - | -
+**BillingService** | /bills | X | - | -
 |  |   | *gets all the past payments* |  |  
