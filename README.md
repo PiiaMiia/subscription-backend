@@ -28,15 +28,11 @@ PORT             = 9000;
 HealthCheck      = 9001;
 ```
 
-Available services
+Available services:
 
-```bash
-DetailsService: http://localhost:9000/details
-BillingService: http://localhost:9000/bills
-```
-
-Available REST methods:
-```bash
-DetailsService: GET, DELETE, POST
-BillingService: GET
-```
+SERVICE | URL | GET | DELETE | POST
+--- | --- | --- | --- | ---
+**DetailsService** | http://localhost:9000/details | X | X | X
+|  |   | *Gets all details of current service* | *Ends current subscription* | *reinstates ended subscription*
+**BillingService** | http://localhost:9000/bills | X | - | -
+|  |   | *gets all the past payments* |  |  
